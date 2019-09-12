@@ -1,4 +1,4 @@
 https://jenkins.io/doc/developer/tutorial/prepare/
 docker run -it -v /home/ubuntu/Documents/github.com:/app -w /app -v /home/ubuntu/.m2:/root/.m2 -p 8080:8080 -p 8000:8000 --rm --entrypoint /bin/bash maven:3-jdk-8
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n"
+export MAVEN_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000"
 mvn hpi:run
